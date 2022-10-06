@@ -7,127 +7,129 @@
 @updateURL   https://raw.githubusercontent.com/dnlj/UserTweaks/master/styles/fandom-wiki-fix.user.css
 ==/UserStyle== */
 
-/*******************************************************************************
- * Bad elements
- * Ideally you should block these with uBlock Origin so they don't even load
- ******************************************************************************/
-/* Useless */
-#WikiaBar { display: none; } /* Useless */
-.page__right-rail {display: none; } /* Useless */
-.global-navigation { display: none; } /* Useless */
-.notifications-placeholder {display: none;} /* Useless */
-.fandom-sticky-header { display: none; } /* Useless */
-.fandom-community-header__background { display: none; } /* Useless */
-.wds-global-footer { display: none; } /* Useless */
-#mixed-content-footer { display: none; } /* Useless */
-.official-wiki-badge { display: none; } /* Useless */
-.gp-wiki-badge { display: none; } /* Useless */
-.wds-dropdown:contains(Fan Portal) { display: none; } /* Useless */
-.fandom-community-header__local-navigation { display: none; } /* Useless */
-.fandom-community-header__community-name-wrapper { display: none; } /* Useless - Page title */
-.page-counter { display: none; } /* Useless */
-.wiki-tools__theme-switch { display: none; } /* Hide theme button. Doesn't work anyways. */
-.page-header__actions { display: none; } /* Hide "View Source" button */
+@-moz-document domain("fandom.com") {
+	/*******************************************************************************
+	* Bad elements
+	* Ideally you should block these with uBlock Origin so they don't even load
+	******************************************************************************/
+	/* Useless */
+	#WikiaBar { display: none; } /* Useless */
+	.page__right-rail {display: none; } /* Useless */
+	.global-navigation { display: none; } /* Useless */
+	.notifications-placeholder {display: none;} /* Useless */
+	.fandom-sticky-header { display: none; } /* Useless */
+	.fandom-community-header__background { display: none; } /* Useless */
+	.wds-global-footer { display: none; } /* Useless */
+	#mixed-content-footer { display: none; } /* Useless */
+	.official-wiki-badge { display: none; } /* Useless */
+	.gp-wiki-badge { display: none; } /* Useless */
+	.wds-dropdown:contains(Fan Portal) { display: none; } /* Useless */
+	.fandom-community-header__local-navigation { display: none; } /* Useless */
+	.fandom-community-header__community-name-wrapper { display: none; } /* Useless - Page title */
+	.page-counter { display: none; } /* Useless */
+	.wiki-tools__theme-switch { display: none; } /* Hide theme button. Doesn't work anyways. */
+	.page-header__actions { display: none; } /* Hide "View Source" button */
 
-/* Ads */
-.unified-search__result.marketplace { display: none; } /* Ad */
-.instant-suggestion { display: none; } /* Ad */
-.unified-search__layout__right-rail { display: none !important; } /* Ad */
-.unified-search__layout__left-rail { display: none !important; } /* Ad */
+	/* Ads */
+	.unified-search__result.marketplace { display: none; } /* Ad */
+	.instant-suggestion { display: none; } /* Ad */
+	.unified-search__layout__right-rail { display: none !important; } /* Ad */
+	.unified-search__layout__left-rail { display: none !important; } /* Ad */
 
-/* Fixes */
-.wiki-tools.wds-button-group { margin-left: auto; } /* Right align search button */
-.wiki-tools__search { border-radius: 3px !important; } /* Fix rounding on search button */
-.unified-search__layout { display: unset !important; } /* Fix search page layout */
+	/* Fixes */
+	.wiki-tools.wds-button-group { margin-left: auto; } /* Right align search button */
+	.wiki-tools__search { border-radius: 3px !important; } /* Fix rounding on search button */
+	.unified-search__layout { display: unset !important; } /* Fix search page layout */
 
-/*******************************************************************************
- * Style adjustments
- * TODO: tables - see poe wiki fix
- ******************************************************************************/
-/* Attempt to bring back even a little responsiveness */
-* {
-    transition: none 0s !important; 
-}
+	/*******************************************************************************
+	* Style adjustments
+	* TODO: tables - see poe wiki fix
+	******************************************************************************/
+	/* Attempt to bring back even a little responsiveness */
+	* {
+		transition: none 0s !important; 
+	}
 
-/* Fix font and font size */
-body,
-body.skin-fandomdesktop {
-    font-size: 14px;
-}
+	/* Fix font and font size */
+	body,
+	body.skin-fandomdesktop {
+		font-size: 14px;
+	}
 
-/* Fix absurd line height */
-.page-content {
-    line-height: 1.5;
-}
+	/* Fix absurd line height */
+	.page-content {
+		line-height: 1.5;
+	}
 
-/* Make contents panel not take the whole screen */
-.toc ul li a {
-    line-height: 1.25;
-}
+	/* Make contents panel not take the whole screen */
+	.toc ul li a {
+		line-height: 1.25;
+	}
 
-/* Make links link color... pain... */
-.toc ul li a {
-    color: var(--theme-link-color);
-}
+	/* Make links link color... pain... */
+	.toc ul li a {
+		color: var(--theme-link-color);
+	}
 
-.toc ul li a:hover {
-    color: var(--theme-link-color--hover);
-    text-decoration: underline;
-}
+	.toc ul li a:hover {
+		color: var(--theme-link-color--hover);
+		text-decoration: underline;
+	}
 
-.toc ul li a .tocnumber, .toc ul li a:hover .tocnumber {
-    color: inherit;
-}
+	.toc ul li a .tocnumber, .toc ul li a:hover .tocnumber {
+		color: inherit;
+	}
 
-/* Make the search button larger */
-.wiki-tools__search:after {
-    content: "search";
-    margin-left: 0.3em;
-}
+	/* Make the search button larger */
+	.wiki-tools__search:after {
+		content: "search";
+		margin-left: 0.3em;
+	}
 
-/* Make search button match theme */
-.wds-button.wiki-tools__search {
-    color: var(--theme-link-color);
-}
+	/* Make search button match theme */
+	.wds-button.wiki-tools__search {
+		color: var(--theme-link-color);
+	}
 
-.wds-button.wiki-tools__search:hover {
-    color: var(--theme-link-color--hover); 
-}
+	.wds-button.wiki-tools__search:hover {
+		color: var(--theme-link-color--hover); 
+	}
 
-/* Make header fit logo better */
-.community-header-wrapper {
-    height: unset;
-    margin-top: 10px;
-}
+	/* Make header fit logo better */
+	.community-header-wrapper {
+		height: unset;
+		margin-top: 10px;
+	}
 
-/* Allow full page layout */
-.main-container{
-    margin: 0 auto;
-    margin-bottom: 25em; /* I just like having some extra scroll space */
-}
+	/* Allow full page layout */
+	.main-container{
+		margin: 0 auto;
+		margin-bottom: 25em; /* I just like having some extra scroll space */
+	}
 
-.resizable-container {
-    max-width: unset;
-    width: unset;
-    margin: 0;
-}
+	.resizable-container {
+		max-width: unset;
+		width: unset;
+		margin: 0;
+	}
 
-.page__main {
-    padding: 8px 16px;
-}
+	.page__main {
+		padding: 8px 16px;
+	}
 
-/* Just because it's round doesnt mean it looks good */
-.page__main, .page, .toc, .wds-button {
-    border-radius: 0 !important;
-}
+	/* Just because it's round doesnt mean it looks good */
+	.page__main, .page, .toc, .wds-button {
+		border-radius: 0 !important;
+	}
 
-/* You may want this. I don't find it useful.*/
-.page-side-tools__wrapper {
-    /*transform: translateX(-125%);*/
-    display: none;
-}
+	/* You may want this. I don't find it useful.*/
+	.page-side-tools__wrapper {
+		/*transform: translateX(-125%);*/
+		display: none;
+	}
 
-/* Fix search modal whitespace */
-.search-modal::before {
-    left: 0;
+	/* Fix search modal whitespace */
+	.search-modal::before {
+		left: 0;
+	}
 }

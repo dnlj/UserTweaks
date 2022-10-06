@@ -7,7 +7,7 @@
 @updateURL   https://raw.githubusercontent.com/dnlj/UserTweaks/master/styles/poe-wiki-tweaks.user.css
 ==/UserStyle== */
 
-@-moz-document domain("https://www.poewiki.net") {
+@-moz-document domain("poewiki.net") {
 	/** Sidebar */
 	#mw-panel {
 		display: none;
