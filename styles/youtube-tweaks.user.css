@@ -1,0 +1,17 @@
+/* ==UserStyle==
+@name        YouTube Tweaks
+@version     1.0.1
+@namespace   dnlj
+@author      dnlj
+@homepageURL https://github.com/dnlj/UserTweaks
+@updateURL   https://raw.githubusercontent.com/dnlj/UserTweaks/master/styles/youtube-tweaks.user.css
+==/UserStyle== */
+
+@-moz-document url-prefix("https://www.youtube.com/feed/subscriptions") {
+	/** Hide the first two elements in the paper-menu */
+	#items > .ytd-menu-popup-renderer.style-scope:nth-of-type(-n+2) {
+		visibility: hidden;
+		min-height: 0;
+		height: 0;
+	}
+}
