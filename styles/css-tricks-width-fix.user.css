@@ -1,0 +1,14 @@
+/* ==UserStyle==
+@name        css-tricks.com Page Width Fix
+@version     1.0.1
+@namespace   dnlj
+@author      dnlj
+@homepageURL https://github.com/dnlj/UserTweaks
+@updateURL   https://raw.githubusercontent.com/dnlj/UserTweaks/master/styles/css-tricks-width-fix.user.css
+==/UserStyle== */
+
+@-moz-document domain("css-tricks.com") {
+    .page-wrap {
+        max-width: 2500px;
+    }
+}

@@ -1,0 +1,26 @@
+/* ==UserStyle==
+@name        Twitch.tv Tweaks
+@version     1.0.1
+@namespace   dnlj
+@author      dnlj
+@homepageURL https://github.com/dnlj/UserTweaks
+@updateURL   https://raw.githubusercontent.com/dnlj/UserTweaks/master/styles/twitch-tweaks.user.css
+==/UserStyle== */
+
+@-moz-document domain("twitch.tv") {
+    /* Make the screen not 200% opaque when paused  */
+    [data-test-selector="player-overlay-play-button"] {
+        opacity: 40%;
+    }
+    .player-overlay-background {
+        background: unset;
+    }
+    .top-bar {
+        background: unset;
+    }
+    
+    /* Hide timestamps in chat */
+    [data-test-selector="message-timestamp"] {
+      display: none !important;
+    }
+}

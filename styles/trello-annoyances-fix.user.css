@@ -1,0 +1,53 @@
+/* ==UserStyle==
+@name        Trello Annoyances Fix
+@description Fixes various Trello annoyances
+@version     1.0.1
+@namespace   dnlj
+@author      dnlj
+@homepageURL https://github.com/dnlj/UserTweaks
+@updateURL   https://raw.githubusercontent.com/dnlj/UserTweaks/master/styles/trello-annoyances-fix.user.css
+==/UserStyle== */
+
+@-moz-document
+    url-prefix("https://trello.com/b/"),
+    url-prefix("https://trello.com/c/") {
+        
+    #header {
+        background: rgba(0,0,0,0.15);
+    }
+
+    /* Disable super bright (FFF) invite button */
+    a.board-header-btn-invite-experiment-v2 {
+        display: none;
+    }
+
+    /* Disable left navigation that doesnt provide any info.
+        Why is there even a sidebar? It doesnt do anything. We already have board navigation.
+            I see now that they changed the "Boards" button to now show ads instead of showing
+            your boards. Even though it is still called "Boards". Very scummy.
+        You can still open/close sidebar with '[' shortcut if you need it for some reason. */
+    [data-test-id="workspace-navigation-collapsed-container"] {
+        display: none;
+    }
+    #board.collapsed-workspace-nav {
+        padding-left: 0px;
+    }
+    .board-header.collapsed-workspace-nav {
+        padding-left: 8px;
+    }
+
+    /* Hide the "Boards" button now that it only shows ads instead of providing access to your boards. Very cool. */
+    button[data-test-id="board-views-switcher-button"] {
+        display: none;
+    }
+
+    /* Hide blinking "Power-Ups" button */
+    .js-pup-dropdown-list-btn {
+        display: none;
+    }
+
+    /* Hide blinking "Share" buitton*/
+    .board-share-button {
+        display: none;
+    }
+}

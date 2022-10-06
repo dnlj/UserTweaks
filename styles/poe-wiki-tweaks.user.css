@@ -1,0 +1,33 @@
+/* ==UserStyle==
+@name        Path of Exile Wiki Tweaks
+@version     1.0.1
+@namespace   dnlj
+@author      dnlj
+@homepageURL https://github.com/dnlj/UserTweaks
+@updateURL   https://raw.githubusercontent.com/dnlj/UserTweaks/master/styles/poe-wiki-tweaks.user.css
+==/UserStyle== */
+
+@-moz-document domain("https://www.poewiki.net") {
+	/** Sidebar */
+	#mw-panel {
+		display: none;
+	}
+
+	#p-namespaces,
+	#p-views,
+	#p-cactions
+	{
+		display: none;
+		width:0;
+		height: 0;
+	}
+
+	/** Create Account / Login */
+	#p-personal {
+		display: none;
+	}
+
+	.mw-body {
+		margin: 1em;
+	}
+}
