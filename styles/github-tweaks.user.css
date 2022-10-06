@@ -1,0 +1,19 @@
+/* ==UserStyle==
+@name        GitHub Tweaks
+@version     1.0.1
+@namespace   dnlj
+@author      dnlj
+@homepageURL https://github.com/dnlj/UserTweaks
+@updateURL   https://raw.githubusercontent.com/dnlj/UserTweaks/master/styles/github-tweaks.user.css
+==/UserStyle== */
+
+@-moz-document domain("github.com") {
+	/* Fix tab size */
+	.highlight {
+		--tab-size: 4;
+		-moz-tab-size: var(--tab-size) !important;
+		-webkit-tab-size: var(--tab-size) !important;
+		-o-tab-size: var(--tab-size) !important;
+		tab-size: var(--tab-size) !important;
+	}
+}
