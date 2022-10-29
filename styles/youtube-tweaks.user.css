@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name        YouTube Tweaks
-@version     1.0.1
+@version     1.0.2
 @namespace   dnlj
 @author      dnlj
 @homepageURL https://github.com/dnlj/UserTweaks
@@ -14,4 +14,25 @@
 		min-height: 0;
 		height: 0;
 	}
+}
+
+@-moz-document url-prefix("https://www.youtube.com") {
+	/** Fix border radii */
+    /** search / menus */
+    .ytd-searchbox,
+    ytd-menu-popup-renderer,
+    /** thumbnails */
+    #thumbnail,
+    ytd-thumbnail,
+    .ytd-thumbnail,
+    ytd-thumbnail::before,
+    /** buttons */
+    yt-chip-cloud-chip-renderer,
+    .yt-spec-button-shape-next,
+    .yt-spec-button-shape,
+    ytd-guide-entry-renderer,
+    .ytd-guide-entry-renderer:hover
+    {
+        border-radius: 0px !important;
+    }
 }
