@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name        YouTube Tweaks
-@version     1.0.2
+@version     1.0.4
 @namespace   dnlj
 @author      dnlj
 @homepageURL https://github.com/dnlj/UserTweaks
@@ -8,12 +8,36 @@
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.youtube.com/feed/subscriptions") {
+    /* Fix the 600px wide video icons */
+    #contents * {
+        --ytd-rich-grid-item-max-width: 250px !important;
+        --ytd-rich-grid-item-min-width: 200px !important; 
+    }
+    
+    ytd-two-column-browse-results-renderer {
+        max-width: 1850px;
+    }
+    
 	/** Hide the first two elements in the paper-menu */
-	#items > .ytd-menu-popup-renderer.style-scope:nth-of-type(-n+2) {
+	#items > .ytd-menu-popup-renderer.style-scope:not(:last-of-type) {
 		visibility: hidden;
 		min-height: 0;
 		height: 0;
 	}
+    
+    /** Fix the padding around the paper-menu */
+    #items > .ytd-menu-popup-renderer.style-scope:last-of-type {
+        height: 48px;
+        justify-content: center;
+    }
+    
+    tp-yt-paper-listbox#items {
+        padding: 0;
+    }
+    
+    ytd-grid-video-renderer[is-dismissed] {
+        display: none !important;
+    }
 }
 
 @-moz-document url-prefix("https://www.youtube.com") {

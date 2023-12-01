@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name        Fandom Wiki Fix
-@version     1.0.1
+@version     1.0.2
 @namespace   dnlj
 @author      dnlj
 @homepageURL https://github.com/dnlj/UserTweaks
@@ -132,4 +132,14 @@
 	.search-modal::before {
 		left: 0;
 	}
+    
+    /* Hide register button */
+    .global-registration-buttons {
+        display: none;
+    }
+    
+    /* Hide discussions button */
+    a[data-tracking="discussions"] {
+        display: none;
+    }
 }
