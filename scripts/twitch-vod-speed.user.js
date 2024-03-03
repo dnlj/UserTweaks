@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name        Twitch VOD Speed
 // @description Adds Speed Slider to VODs
-// @version     1.0.0
+// @version     1.0.1
 // @namespace   dnlj
 // @author      dnlj
 // @homepage    https://github.com/dnlj/UserTweaks
 // @downloadURL https://raw.githubusercontent.com/dnlj/UserTweaks/master/scripts/twitch-vod-speed.user.js
 // @updateURL   https://raw.githubusercontent.com/dnlj/UserTweaks/master/scripts/twitch-vod-speed.user.js
+// @match       *://*.twitch.tv/*/video/*
 // @match       *://*.twitch.tv/videos/*
 // @grant       none
 // @run-at      document-start
