@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Trello Smart Link Fix
 // @description Fixes Trello's "smart" link anti-feature.
-// @version     1.0.1
+// @version     1.0.2
 // @namespace   dnlj
 // @author      dnlj
 // @homepage    https://github.com/dnlj/UserTweaks
@@ -14,8 +14,25 @@
 const mutObs = new MutationObserver((muts, obs) => {
 	for (const mut of muts) {
 		if (mut.target.className == "atlaskit-smart-link") {
+			// Un-"smart"-ify links.
 			mut.target.className = "";
 			mut.target.innerHTML = mut.target.href;
+		} else if (mut.target.nodeName == "DIV" && mut.target.innerText.includes("Show more labels")) {
+			// Expand the labels list.
+			//
+			// Trello doesn't want to fix this because it doesn't look good on
+			// small laptops... To bad there is no way to easily query the
+			// devices media type. And JavaScript doesn't exist so that isn't
+			// possible either. Maybe one day we will have that technology.
+			//
+			// https://community.atlassian.com/t5/Trello-questions/Can-I-show-all-labels-by-default-in-the-quot-Labels-quot-sub/qaq-p/2433715
+			const buttons = mut.target.querySelectorAll("button")
+			for (const button of buttons) {
+				if (button.innerText.includes("Show more labels")) {
+					button.click();
+					return;
+				}
+			}
 		}
 	}
 });
