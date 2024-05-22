@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Trello Smart Link Fix
 // @description Fixes Trello's "smart" link anti-feature.
-// @version     1.0.3
+// @version     1.0.4
 // @namespace   dnlj
 // @author      dnlj
 // @homepage    https://github.com/dnlj/UserTweaks
@@ -33,7 +33,18 @@ const mutObs = new MutationObserver((muts, obs) => {
 					return;
 				}
 			}
-		} else if (mut.target.nodeName == "A" && mut.target.innerText.includes("View all Trello attachments")) {
+		} else if (mut.target.nodeName == "DIV" && mut.target.innerText.includes("Show more")) {
+			// Expand the full card description. By default it only shows the
+			// first few sentences, which is useless. If I'm click on the story
+			// to see more info, I clearly want to see it.
+			const buttons = mut.target.querySelectorAll("button")
+			for (const button of buttons) {
+				if (button.innerText.includes("Show more")) {
+					button.click();
+					return;
+				}
+			}
+		}  else if (mut.target.nodeName == "A" && mut.target.innerText.includes("View all Trello attachments")) {
 			// Always show all attached cards. By default it only shows you the
 			// first few.
 			mut.target.click();
