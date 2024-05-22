@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Trello Smart Link Fix
 // @description Fixes Trello's "smart" link anti-feature.
-// @version     1.0.2
+// @version     1.0.3
 // @namespace   dnlj
 // @author      dnlj
 // @homepage    https://github.com/dnlj/UserTweaks
@@ -33,6 +33,10 @@ const mutObs = new MutationObserver((muts, obs) => {
 					return;
 				}
 			}
+		} else if (mut.target.nodeName == "A" && mut.target.innerText.includes("View all Trello attachments")) {
+			// Always show all attached cards. By default it only shows you the
+			// first few.
+			mut.target.click();
 		}
 	}
 });
