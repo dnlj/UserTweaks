@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name        Trello Annoyances Fix
 @description Fixes various Trello annoyances
-@version     1.0.1
+@version     1.0.2
 @namespace   dnlj
 @author      dnlj
 @homepageURL https://github.com/dnlj/UserTweaks
@@ -11,11 +11,37 @@
 @-moz-document
     url-prefix("https://trello.com/b/"),
     url-prefix("https://trello.com/c/") {
-        
+    
     #header {
         background: rgba(0,0,0,0.15);
     }
-
+    
+    /* Fix the "Modernization" update. Remove huge padding and rounded corners */
+    /*body .list,
+    .board-header-btn,*/
+    div[data-testid*="search-input"], /* search box at top of page */
+    button, /**/
+    .button, /**/
+    .button-link, /**/
+    /*.card-detail-window, /**/
+    .window, /* details: modal window */
+    .comment-frame, /* details: comment box */
+    .action-comment, /* details: comment */
+    /* .list-card, /**/
+    a,
+    [data-testid=list], /* primary list on trello board */
+    [data-testid=trello-card] /* cards within each list */
+    {
+        border-radius: 2px !important;
+    }
+    
+    /* Blue outline on card hover */
+    /* 2025/03/23: Fixes annoying double blue/white border that they recently added. */
+    [data-testid=trello-card]:focus-within
+    {
+        outline:#0a84ff solid 1px !important;
+    }
+    
     /* Disable super bright (FFF) invite button */
     a.board-header-btn-invite-experiment-v2 {
         display: none;
@@ -46,8 +72,50 @@
         display: none;
     }
 
-    /* Hide blinking "Share" buitton*/
+    /* Hide blinking "Share" buitton */
     .board-share-button {
         display: none;
     }
+    
+    /* Fix the painful amount of margin in text boxes. */
+    .ak-editor-content-area {
+        padding: 0.75em;
+    }
+    #ak-editor-textarea > p,
+    .ak-renderer-document > p{
+        line-height: 1.25em;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
